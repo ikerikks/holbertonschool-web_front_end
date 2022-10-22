@@ -1,6 +1,8 @@
 @import url("normalize.css");
 
-* { box-sizing: border-box;}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
 :root {
     --color-primary: #d73953;
