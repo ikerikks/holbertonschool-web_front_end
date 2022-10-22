@@ -76,14 +76,14 @@ a {
     text-decoration: none;
 }
 
-a:link.a:visited {
+a[href=""]:visited {
     font-style: italic;
 }
 
-a:hover {
+a[href=""]:hover {
     text-decoration: underline;
 }
 
-a:active {
+a[href=""]:active {
     color: var(--color-light-grey);
 }
