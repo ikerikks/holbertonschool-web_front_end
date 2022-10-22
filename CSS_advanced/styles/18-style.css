@@ -74,7 +74,7 @@ html {
 
 .nav .nav-link {
     display: block;
-    padding: html;
+    padding: inherit;
 }
 
 .nav .nav-link:hover {
