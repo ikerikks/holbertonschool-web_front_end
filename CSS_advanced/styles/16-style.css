@@ -77,8 +77,7 @@ body {
 
 .container {
     width: 960px;
-    margin-right: 960px;
-    margin-left: 960px;
+    margin: 960px;
 }
 
 h1, h2, h3, h4, h5, h6 {
