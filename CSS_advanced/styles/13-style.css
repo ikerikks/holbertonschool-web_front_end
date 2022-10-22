@@ -80,10 +80,10 @@ a:link.a:visited {
     font-style: italic;
 }
 
-a:link.a:hover {
+a:hover {
     text-decoration: underline;
 }
 
-a:link.a:active {
+a:active {
     color: var(--color-light-grey);
 }
