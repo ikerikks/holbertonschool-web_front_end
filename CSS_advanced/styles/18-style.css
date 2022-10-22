@@ -72,7 +72,7 @@ html {
 
 .nav .nav-link {
     display: block;
-    padding: 50% auto;
+    padding: 0.5rem auto;
 }
 
 .nav .nav-link:hover {
