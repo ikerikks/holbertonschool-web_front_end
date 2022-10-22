@@ -70,7 +70,7 @@ html {
     margin: var(--nav-item-margin);
 }
 
-.nav .nav-link {
+.nav .nav-link:root {
     display: block;
     padding: 50% auto;
 }
