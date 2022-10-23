@@ -52,7 +52,7 @@
     --button-hover-background: var(--color-primary);
     --header-padding: 4rem 0 0;
     --header-logo-position: relative;
-    --header-logo-link-display: inline block;
+    --header-logo-link-display: inline-block;
     --header-logo-link-position: absolute;
     --header-logo-link-top: -1rem;
     --header-logo-link-left: 0;
@@ -133,7 +133,7 @@ body {
 }
 
 .header-logo {
-    position: var(--header-logo-link-position);
+    position: var(--header-logo-position);
 }
 
 .header-logo a {
