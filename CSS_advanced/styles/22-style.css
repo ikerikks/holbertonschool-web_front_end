@@ -41,7 +41,6 @@
     --nav-item-display: inline-block;
     --nav-item-margin: 0 0 3rem 0;
     --nav-item-link-hover: var(--color-primary);
-    --data
 
 }
 
@@ -204,5 +203,12 @@ ul.row {
 [class*="col-"] {
     float: left;
     padding: 0.5rem;
+    
+}
+
+[data-section-theme=“dark”] {
+    --text-color: var(--color-white);
+    --section-title-color: var(--color-white);
+    background-color: var(--color-black);
     
 }
