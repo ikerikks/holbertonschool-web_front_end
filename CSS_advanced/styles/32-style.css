@@ -307,8 +307,7 @@ ul.row {
     text-decoration: var(--button-hover-text-decoration);
     background: var(--button-hover-background);
     transition-duration: var(--transition-duration);
-    transition-property: var(--button-hover-background);
-    transition-property: var(--button-hover-color);
+    transition-property: color, background-color;
 }
 
 .card-testimonial {
