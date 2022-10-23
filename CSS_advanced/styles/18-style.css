@@ -50,6 +50,18 @@ html {
     font-size: 62.5%;
 }
 
+body, a {
+    color: var(--text-color);
+    font-family: var(--font-family-base);
+}
+
+body {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-base);
+    
+}
+
 .navbar-menu {
     float: right;
 }
@@ -72,23 +84,11 @@ html {
 
 .nav .nav-link {
     display: block;
-    padding: 0.5rem 0rem;
+    padding: 0.5rem 1rem;
 }
 
 .nav .nav-link:hover {
     color: var(--nav-item-link-hover);
-}
-
-body, a {
-    color: var(--text-color);
-    font-family: var(--font-family-base);
-}
-
-body {
-    font-size: var(--font-size-medium);
-    font-weight: var(--font-weight-regular);
-    line-height: var(--line-height-base);
-    
 }
 
 .visually-hidden {
