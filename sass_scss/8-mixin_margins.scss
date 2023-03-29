@@ -1,0 +1,15 @@
+@mixin body-margin {
+  margin: 0px 10px;
+}
+
+@mixin div-margin {
+  margin: 0px 15px;  
+}
+
+body {
+  @include body-margin();
+}
+
+div {
+  @include div-margin();
+}
