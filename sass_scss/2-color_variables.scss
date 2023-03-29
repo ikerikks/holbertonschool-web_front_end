@@ -1,0 +1,12 @@
+$new_color: #3D3D3D; 
+$backd_color: #6D6D6D;
+
+body {
+  color: $new_color;
+  background-color: $backd_color; }
+
+p {
+  color: $new_color; }
+
+h2 {
+  background-color: $backd_color }
