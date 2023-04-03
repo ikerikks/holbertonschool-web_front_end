@@ -599,7 +599,7 @@
     border-bottom: 0.2rem solid var(--color-light-grey);
   }
 
-  .post-meta-list [class^="post-meta"] li:last-child {
+ [class^="post-meta"]:last-child {
     border: none;
     margin-bottom: 3em;
   }
