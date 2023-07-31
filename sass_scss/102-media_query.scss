@@ -1,0 +1,18 @@
+@mixin size($num) {
+  font-size: $num#{px};
+}
+
+h1 {
+  @media screen and (max-width: 960px){
+    @include size(20);
+  }
+  @media screen and (max-width: 640px){
+    @include size(18);
+  }
+  @media screen and (max-width: 320px){
+    @include size(14);
+    &.small {
+      color: #1D1D1D;
+    }
+  }
+}
