@@ -1,17 +1,12 @@
-@mixin body-margin {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-@mixin div-margin {
-  margin-left: 15px;
-  margin-right: 15px;
+@mixin ele-margin($px) {
+  margin-left: $px;
+  margin-right: $px;
 }
 
 body {
-  @include body-margin();
+  @include ele-margin(10px);
 }
 
 div {
-  @include div-margin();
+  @include ele-margin(10px);
 }
