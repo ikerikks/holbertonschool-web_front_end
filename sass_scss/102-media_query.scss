@@ -3,11 +3,12 @@
 }
 
 h1 {
+  @include size(20);
   @media screen and (max-width: 960px){
-    @include size(20);
+    @include size(18);
   }
   @media screen and (max-width: 640px){
-    @include size(18);
+    @include size(16);
   }
   @media screen and (max-width: 320px){
     @include size(14);
