@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Task 7</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script type="application/javascript" defer>
+    const form = $(`<form>
+        <input type="search"/>
+        <input type="submit" value="Submit"/>
+        <ul></ul>
+      </form>`);
+
+    const createSearchForm = () => {
+      form.on("submit", (e) => {
+        e.preventDefault();
+        const searchTerm = form.find("input[type=search]").val();
+        queryWikipedia(searchTerm);
+      });
+      $(document.body).append(form);
+    };
+
+    const addNewArticle = (id, title, snippet) => {
+      const list = $(`<li>
+                                    <p><span>id - ${title}</span></p>
+                                    <p>${snippet}</p>
+                                  </li>`);
+      form.find("ul").append(list);
+    }
+    const Url = "https://www.mediawiki.org/w/api.php?action=query&list=search&srsearch=";
+    
+    const queryWikipedia = (search) => {
+      let settings = {
+            'cache': false,
+            'dataType': "jsonp",
+            "async": true,
+            "crossDomain": true,
+            "url": Url + search,
+            "method": "GET",
+            "action": "query",
+            "headers": {
+                "accept": "application/json",
+                "Access-Control-Allow-Origin":"*"
+            }
+        }
+      $.ajax(settings).done((response) => {
+        response.query.search.forEach((item) => {
+          addNewArticle(item.pageid, item.title, item.snippet);
+        });
+      });
+    };
+
+    
+
+    createSearchForm();
+  </script>
+</body>
+
+</html>
