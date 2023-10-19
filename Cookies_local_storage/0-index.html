@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Login to the website</h1>
+  <input type="text" id="firstname" placeholder="Firstname">
+  <input type="text" id="email" placeholder="Email">
+  <button class="b-log" onclick="setCookies()">Log me in</button>
+  <h1>Cookies</h1>
+  <button class="b-show" onclick="showCookies()">Show the cookies</button>
+
+  <script defer>
+    const logButton = document.querySelector('.b-log');
+    const showButton = document.querySelector('.b-show');
+    const firstName = document.querySelector('#firstname');
+    const email = document.querySelector('#email');
+    const setCookies = () => {
+      document.cookie = "firstname=" + firstName.value;
+      document.cookie = "email=" + email.value;
+    }
+
+    const showCookies = () => {
+      const text = document.createElement('p');
+      text.innerText = "Cookies: " + document.cookie;
+      document.body.appendChild(text);
+    }
+  </script>
+</body>
+
+</html>

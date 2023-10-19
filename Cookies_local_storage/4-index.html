@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+</head>
+
+<body>
+  <div class="form">
+    <h2>Login to the website</h2>
+    <input type="text" id="firstname" placeholder="Firstname">
+    <input type="text" id="email" placeholder="Email">
+    <button class="b-log" onclick="showWelcomeMessageOrForm()">Log me in</button>
+  </div>
+
+  <script defer>
+    const form = document.querySelector('.form');
+    const logButton = document.querySelector('.b-log');
+    const showButton = document.querySelector('.b-show');
+    const firstName = document.querySelector('#firstname')
+    const email = document.querySelector('#email');
+    const welcome = document.createElement('h1');
+
+    const setCookies = () => {
+      const date = new Date();
+      date.setTime(date.getTime() + (10 * 24 * 60 * 60 * 1000));
+      document.cookie = "firstname=" + firstName.value;
+      document.cookie = "email=" + email.value;
+      document.cookie = "expires=" + date.toUTCString() + "; path=/";
+    }
+
+    const showCookies = () => {
+      const text = document.createElement('p');
+      text.innerText = "Email: " + email.value + " - Firstname: "  + firstName.value;
+      document.body.appendChild(text);
+    }
+    
+    Cookies.get();
+    
+    const showForm = _ => {
+      welcome.remove();
+    };
+    
+    const hideForm = _ => { form.style.display = "none"; };
+    
+    const deleteCookiesAndShowForm = _ => {
+      Cookies.remove()
+      showForm();
+    }
+
+    const showWelcomeMessageOrForm = _ => { 
+      const link = document.createElement("a");
+      link.innerText = "(logout)";
+      link.style.fontStyle = "italic";
+      link.style.marginLeft = "10px";
+      link.style.fontWeight = "500";
+      welcome.innerText = "Welcome " + firstName.value;
+      welcome.appendChild(link);
+      link.addEventListener("click", _ => {
+        deleteCookiesAndShowForm();
+        document.body.appendChild(form);
+      })
+      
+      form.remove();
+      document.body.appendChild(welcome);
+    }
+
+    const setCookiesAndShowWelcomeMessage =  _ => {
+      Cookies.get("firstname", firstName.value);
+      Cookies.get("email", email.value);
+      showWelcomeMessageOrForm();
+    }
+    </script>
+</body>
+
+</html>
